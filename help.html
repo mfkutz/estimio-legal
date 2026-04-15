@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help & Support — Estimio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0d0118;
+      color: #e2d9f3;
+      line-height: 1.7;
+    }
+    .header {
+      background: linear-gradient(135deg, #6e34a9 0%, #a14ef9 60%, #6e34a9 100%);
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .header p {
+      margin-top: 8px;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #5a3880;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 40px;
+      margin-bottom: 14px;
+    }
+    .faq-list {
+      border: 1px solid #2d1050;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .faq-item {
+      border-bottom: 1px solid #2d1050;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      width: 100%;
+      background: #1e0530;
+      border: none;
+      cursor: pointer;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      text-align: left;
+    }
+    .faq-question span {
+      font-size: 15px;
+      font-weight: 600;
+      color: #f0f0ff;
+    }
+    .faq-icon {
+      font-size: 18px;
+      color: #5a3880;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      color: #a14ef9;
+    }
+    .faq-answer {
+      display: none;
+      background: #160228;
+      padding: 0 20px 18px;
+      font-size: 14px;
+      color: #c4b5d9;
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+    .faq-answer a {
+      color: #a14ef9;
+      text-decoration: none;
+    }
+    .faq-answer a:hover {
+      text-decoration: underline;
+    }
+    .contact-card {
+      background: #1e0530;
+      border: 1px solid #3d1860;
+      border-radius: 18px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+    }
+    .contact-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: rgba(161,78,249,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+    .contact-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #f0f0ff;
+    }
+    .contact-sub {
+      font-size: 14px;
+      color: #8b5cb8;
+      max-width: 320px;
+    }
+    .contact-btn {
+      display: inline-block;
+      margin-top: 4px;
+      background: linear-gradient(90deg, #6e34a9, #a14ef9);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .contact-btn:hover { opacity: 0.85; }
+    .footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid #2d1050;
+      color: #5a3880;
+      font-size: 13px;
+    }
+    .footer a { color: #5a3880; text-decoration: none; }
+    .footer a:hover { color: #a14ef9; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Help & Support</h1>
+  <p>Estimio · Frequently asked questions</p>
+</div>
+
+<div class="container">
+
+  <div class="section-title">Getting started</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I create my first quote?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Tap the <strong>Quotes</strong> tab at the bottom, then tap the <strong>+</strong> button. Fill in the client, add the items or services you want to include, set the validity date, and tap <strong>Save</strong>. Your quote is ready to share.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I add a client?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Go to the <strong>Clients</strong> tab and tap <strong>+</strong>. Enter the client's name and any contact details you want to save. Once created, the client will be available when creating quotes.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I create reusable services?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Go to the <strong>Services</strong> tab and tap <strong>+</strong>. Add a name, description, and price. Saved services can be quickly added to any quote without having to type them again each time.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I set my business name and currency?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Go to <strong>Settings</strong> (top right corner of the Stats screen) and tap <strong>Business name</strong> or <strong>Country</strong>. Selecting a country will automatically set the matching currency.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Quotes</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I share a quote with a client?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Open the quote and tap the <strong>Share</strong> button. You can share it as a PDF via WhatsApp, email, or any other app on your phone.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>Can I duplicate a quote?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Yes. Open the quote, tap the options menu (⋯), and select <strong>Duplicate</strong>. A copy will be created that you can edit freely.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I mark a quote as accepted or rejected?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Open the quote and use the status selector at the top to change it to <strong>Accepted</strong>, <strong>Rejected</strong>, or <strong>Pending</strong>. This helps you keep track of your pipeline.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Account</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I reset my password?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Go to <strong>Settings → Reset password</strong>. We'll send a reset link to your email address. If you signed up with Google, this option is not available — your password is managed by your Google account.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I delete my account?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Go to <strong>Settings → Danger Zone → Delete account</strong>. You'll be asked to type your email to confirm. This permanently deletes all your quotes, clients, services, and profile. This action cannot be undone.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>Is my data backed up?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Yes. All your data is stored securely in the cloud (Google Firebase), so it's always available even if you switch devices or reinstall the app. Just sign in with the same account.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Subscription</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>How do I manage or cancel my subscription?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Subscriptions are managed through the App Store (iOS) or Google Play (Android). Go to your device's subscription settings to cancel, upgrade, or view your billing details. Cancelling will keep your access active until the end of the current billing period.
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggle(this)">
+        <span>I was charged but my subscription is not active. What do I do?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        Try closing and reopening the app. If the issue persists, contact us at <a href="mailto:support@estimio.app">support@estimio.app</a> with your account email and we'll sort it out as soon as possible.
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="section-title">Still need help?</div>
+  <div class="contact-card">
+    <div class="contact-icon">✉️</div>
+    <div class="contact-title">Contact support</div>
+    <div class="contact-sub">Can't find what you're looking for? Send us an email and we'll get back to you.</div>
+    <a class="contact-btn" href="mailto:support@estimio.app">support@estimio.app</a>
+  </div>
+
+</div>
+
+<div class="footer">
+  © 2025 Estimio ·
+  <a href="privacy-policy.html">Privacy Policy</a> ·
+  <a href="terms.html">Terms of Use</a>
+</div>
+
+<script>
+  function toggle(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
